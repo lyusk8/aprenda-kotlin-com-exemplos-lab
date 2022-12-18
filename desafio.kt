@@ -6,7 +6,7 @@ data class ConteudoEducacional(var nome: String, val duracao: Int = 60, val nive
 
 data class Formacao(val nome: String, val conteudos: List<ConteudoEducacional>) {
 
-    val inscritos = mutableListOf<Usuario>()
+    private val inscritos = mutableListOf<Usuario>()
 
     fun matricular(usuario: Usuario) :Boolean {
         return inscritos.add(usuario)
@@ -26,4 +26,4 @@ fun main() {
     formacao.matricular(Usuario("Elias"))
 
     formacao.inscritos.map { println(it.nome)}
-}.
+}
